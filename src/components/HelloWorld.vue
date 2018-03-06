@@ -1,21 +1,21 @@
 <template>
-<div>
+<div class="index-page sidebar-collapse">
     <Navbar/>
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="black"  style="background: rgba(0, 0, 0, 0.4);">
-            <div class="page-header-image" data-parallax="true" style="background-image: url(&quot;../../static/img/cairong.jpg&quot;); transform: translate3d(0px, 107px, 0px);">
+            <div class="page-header-image" style="background-image: url(&quot;../../static/img/cairong.jpg&quot;); transform: translate3d(0px, 107px, 0px);">
             </div>
             <div class="container">
                 <div class="content-center brand">
                     <br>
-                    <img class="n-logo" src="../../static/img/now-logo.png" alt="">
+                    <img class="n-logo animated flip" src="../../static/img/now-logo.png" alt="">
                     <br>
                     <h2 class="h1-seo text-capitalize">Đất đặc khu kinh tế Vân Đồn</h2>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 ml-auto mr-auto text-center">
-                                <h1 class="title">Cơ hội đầu tư cực tốt</h1>
-                                <h3 class="description text-light">Lợi nhuận lên tới <span class="title text-primary">50% </span> - <span class="title text-primary">150% </span> một năm</h3>
+                                <h1 class="title animated shake">Cơ hội đầu tư cực tốt</h1>
+                                <h2 class="description text-light  animated wobble">Lợi nhuận lên tới <span class="title text-primary">50% </span> - <span class="title text-primary">150% </span> một năm</h2>
                             </div>
                         </div>
                         <div class="separator separator-primary"></div>
@@ -23,7 +23,6 @@
                 </div>
             </div>
         </div>
-        <div class="main">
             <div class="section" id="carousel">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -32,26 +31,13 @@
                                 <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active">
-                                        <img class="d-block" src="../../static/img/van-don-quan-ninh-1-1024x576.jpg" alt="First slide">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Ven vịnh thị trấn Cái Rồng</h5>
-                                        </div>
+                                        <img class="d-block" src="../../static/img/info1.png" alt="First slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block" src="../../static/img/hinh-anh-cao-toc-ha-noi-hai-phong-truoc-ngay-thong-xe-1.jpg" alt="Second slide">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Cao tốc Hạ Long - Vân Đồn</h5>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block" src="../../static/img/bg4.jpg" alt="Third slide">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Yellowstone National Park, United States</h5>
-                                        </div>
+                                        <img class="d-block" src="../../static/img/info2.png" alt="Second slide">
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -73,7 +59,7 @@
                             <h5 class="description">Gọi ngay chúng tôi đi</h5>
                         </div>
                         <div class="text-center col-md-12 col-lg-8">
-                            <a href="tel:0972289170" class="btn btn-primary btn-lg btn-round" role="button">
+                            <a href="tel:0972289170" v-on:scroll="onScroll" v-bind:class="{wobble : isWobble}"  class="btn btn-primary btn-lg btn-round animated" role="button">
                                 <i class="si si-call-out"></i>
                                 Gọi Ngay
                             </a>
@@ -97,11 +83,17 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Vuejs Ville'
+      msg: 'Welcome to Vuejs Ville',
+        isWobble: false
     }
   },
     components : {
       Navbar, VueFooter
+    },
+    methods: {
+        onScroll(event) {
+            console.log("scrolling");
+        }
     }
 
 }

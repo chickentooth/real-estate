@@ -70,4 +70,4 @@
 
 <style scoped>
 
-</  style>
+</style>
